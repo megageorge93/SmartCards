@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/materialCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:paddingBottom="10dp"
+    app:cardCornerRadius="0dp"
+    android:elevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/btn_gradient"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/folderPlayBtn"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_knopka" />
+
+        <LinearLayout
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/folder_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <!--<ImageView-->
+            <!--android:id="@+id/editBtn"-->
+            <!--android:layout_width="41dp"-->
+            <!--android:layout_height="43dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--app:srcCompat="@drawable/ic_more_vert_black_24dp" />-->
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

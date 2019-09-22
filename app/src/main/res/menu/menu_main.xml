@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.smartcards.MainActivity">
+    <item
+        android:id="@+id/import_excel"
+        android:orderInCategory="100"
+        android:title="@string/import_excel"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/export_excel"
+        android:orderInCategory="100"
+        android:title="@string/export_excel"
+        app:showAsAction="never" />
+</menu>

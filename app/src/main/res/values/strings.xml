@@ -1,0 +1,35 @@
+<resources>
+
+    //menu
+    <string name="app_name">Smart Cards</string>
+    <string name="import_excel">Import from Excel</string>
+    <string name="export_excel">Export to Excel</string>
+
+    //Categories
+    <string name="category_name_hint">Enter Category Name</string>
+    <string name="new_category">New Category</string>
+    <string name="title_activity_categories">My Categories</string>
+
+    //Folders
+    <string name="folder_name_hint">Enter Folder Name</string>
+    <string name="new_folder">New Folder</string>
+    <string name="title_activity_folders">My Folders</string>
+
+    //Cards
+    <string name="new_card">New Card</string>
+    <string name="title_activity_cards">My Cards</string>
+    <string name="title_activity_card">Card</string>
+    <string name="card_front_side">Front Side</string>
+    <string name="card_back_side">Back Side</string>
+
+    //Dialogs
+    <string name="add_btn">Add</string>
+    <string name="want_delete">Are you sure \n You want to delete?</string>
+    <string name="delete_yes_btn">Yes</string>
+    <string name="delete_no_btn">No</string>
+
+
+
+
+
+</resources>

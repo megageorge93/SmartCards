@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Dialogs.AddCardsDialog"
+    android:padding="40dp"
+    android:background="@drawable/inset_dialog">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_card"
+        style="@style/TextAppearance.MaterialComponents.Headline4"
+        android:paddingBottom="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#0288D1"
+        android:paddingBottom="20dp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/card_front_side"
+        android:paddingTop="20dp"
+        app:boxBackgroundColor="#E1F5FE"
+        app:boxStrokeColor="#0288D1">
+<!--        app:hintTextColor="#0288D1"-->
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/CardFrontSideText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textCursorDrawable="@drawable/edit_text_cursor"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/card_back_side"
+        android:paddingTop="20dp"
+        app:boxBackgroundColor="#E1F5FE"
+        app:boxStrokeColor="#0288D1" >
+<!--        app:hintTextColor="#0288D1"-->
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/CardBackSideText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textCursorDrawable="@drawable/edit_text_cursor"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_marginTop="20dp"
+            android:id="@+id/addCardBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/add_btn"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="#1976D2"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
