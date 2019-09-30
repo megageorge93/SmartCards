@@ -1,26 +1,20 @@
 package com.example.smartcards.UI;
-
 import android.os.Bundle;
-
 import com.example.smartcards.Adapters.CardsRecyclerAdapter;
 import com.example.smartcards.Dialogs.AddCardsDialog;
 import com.example.smartcards.Models.Cards;
 import com.example.smartcards.ViewModels.CardsViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NavUtils;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.View;
-
 import com.example.smartcards.R;
-
 import java.util.List;
 
 public class CardsActivity extends AppCompatActivity implements AddCardsDialog.OnCardInputListener {
@@ -75,4 +69,9 @@ public class CardsActivity extends AppCompatActivity implements AddCardsDialog.O
     }
 
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavUtils.navigateUpTo(this, getIntent());
+        return true;
+    }
 }

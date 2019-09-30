@@ -1,17 +1,12 @@
 package com.example.smartcards.ViewModels;
-
 import android.app.Application;
 import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-
 import com.example.smartcards.Database.Cards.CardsRepository;
 import com.example.smartcards.Models.Cards;
-
 import java.util.List;
-
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class CardsViewModel extends AndroidViewModel {

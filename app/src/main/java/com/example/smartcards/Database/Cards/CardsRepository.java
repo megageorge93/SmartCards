@@ -1,14 +1,10 @@
 package com.example.smartcards.Database.Cards;
-
 import android.app.Application;
 import android.os.AsyncTask;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
-
 import com.example.smartcards.Database.SmartCardDatabase;
 import com.example.smartcards.Models.Cards;
-
 import java.util.List;
 
 public class CardsRepository {

@@ -1,17 +1,13 @@
 package com.example.smartcards.Adapters;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.smartcards.Models.Cards;
 import com.example.smartcards.R;
-
 import java.util.ArrayList;
 import java.util.List;
 

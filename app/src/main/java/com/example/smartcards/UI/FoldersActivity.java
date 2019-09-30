@@ -1,7 +1,5 @@
 package com.example.smartcards.UI;
-
 import android.os.Bundle;
-
 import com.example.smartcards.Adapters.FolderRecyclerAdapter;
 import com.example.smartcards.Dialogs.AddDialog;
 import com.example.smartcards.Dialogs.DeleteDialog;
@@ -15,7 +13,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.View;
 import com.example.smartcards.R;
@@ -30,7 +27,6 @@ public class FoldersActivity extends AppCompatActivity  implements AddDialog.OnI
     FolderRecyclerAdapter folderAdapter = new FolderRecyclerAdapter();
     AddDialog addDialog = new AddDialog();
   //  public int folderId = 0;
-
 
     @Override
     public void sendInput(String inputCategoryName) {
@@ -95,8 +91,5 @@ public class FoldersActivity extends AppCompatActivity  implements AddDialog.OnI
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
-
-
-
 
 }

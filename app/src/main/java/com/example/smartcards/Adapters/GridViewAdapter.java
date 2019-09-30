@@ -1,7 +1,5 @@
 package com.example.smartcards.Adapters;
-
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +8,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.smartcards.Adapters.Listeners.OnGridViewAdapterDeleteClickListener;
 import com.example.smartcards.Models.Categories;
 import com.example.smartcards.R;
 import com.example.smartcards.UI.FoldersActivity;
-
 import java.util.ArrayList;
 import java.util.List;
 
