@@ -10,7 +10,6 @@ import java.util.List;
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class CardsViewModel extends AndroidViewModel {
-
     private CardsRepository cardsRepository;
     private LiveData<List<Cards>> allCards;
 
@@ -19,6 +18,7 @@ public class CardsViewModel extends AndroidViewModel {
         cardsRepository = CardsRepository.getInstance(application);
         allCards = cardsRepository.retrieveCardsTask();
     }
+
     public void insertCard (Cards cards){ cardsRepository.insertCardsTask(cards);}
 
     public void deleteCard(Cards cards){cardsRepository.deleteCardsTask(cards);}

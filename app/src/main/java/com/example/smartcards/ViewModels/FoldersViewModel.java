@@ -7,13 +7,9 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-
 import com.example.smartcards.Database.Folder.FoldersRepository;
 import com.example.smartcards.Models.Folders;
-import com.example.smartcards.UI.FoldersActivity;
-
 import java.util.List;
-
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class FoldersViewModel extends AndroidViewModel {
@@ -23,7 +19,6 @@ public class FoldersViewModel extends AndroidViewModel {
     public FoldersViewModel(@NonNull Application application) {
         super(application);
         foldersRepository = FoldersRepository.getInstance(application);
-
         allFolders = foldersRepository.retrieveFoldersTask();
     }
 

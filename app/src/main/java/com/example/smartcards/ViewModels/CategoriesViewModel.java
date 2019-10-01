@@ -14,9 +14,6 @@ import com.example.smartcards.Models.Categories;
 import java.util.List;
 
 public class CategoriesViewModel extends AndroidViewModel {
-
-
-
     private CategoryRepository repository;
     private LiveData<List<Categories>> allCategories;
 
