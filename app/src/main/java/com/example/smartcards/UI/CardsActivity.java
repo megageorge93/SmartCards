@@ -53,9 +53,7 @@ public class CardsActivity extends AppCompatActivity implements AddCardsDialog.O
         recyclerView.setLayoutManager(linearLayoutManager);
 
         mCardsViewModel = ViewModelProviders.of(this).get(CardsViewModel.class);
-//        mCardsViewModel.getAllCardsFromFolder(folderId).observe(this, new Observer<List<Cards>>() {
-        // TODO: create request to get card by ID, now it gets all cards from DB
-        mCardsViewModel.getAllCards().observe(this, new Observer<List<Cards>>() {
+        mCardsViewModel.getAllCardsFromFolder(folderId).observe(this, new Observer<List<Cards>>() {
         @Override
             public void onChanged(List<Cards> cards) {
                 recyclerView.setAdapter(cardsAdapter);

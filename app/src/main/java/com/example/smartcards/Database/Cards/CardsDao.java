@@ -24,7 +24,7 @@ public interface CardsDao {
     @Query("SELECT * FROM Cards")
     LiveData<List<Cards>> getAllCards();
 
-    @Query("SELECT * FROM Cards WHERE 'current_folder_id' = :currentCardsFolderId")
+    @Query("SELECT * FROM Cards WHERE current_folder_id = :currentCardsFolderId")
     LiveData<List<Cards>> getAllCardsFromFolder(int currentCardsFolderId);
 
 }
