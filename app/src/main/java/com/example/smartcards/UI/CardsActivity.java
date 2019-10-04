@@ -1,10 +1,8 @@
 package com.example.smartcards.UI;
 import android.os.Bundle;
-import com.example.smartcards.Adapters.CardsRecyclerAdapter;
-import com.example.smartcards.Dialogs.AddCardsDialog;
-import com.example.smartcards.Models.Cards;
-import com.example.smartcards.ViewModels.CardsViewModel;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import android.util.Log;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
@@ -12,9 +10,14 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
+
+import com.example.smartcards.Adapters.CardsRecyclerAdapter;
+import com.example.smartcards.Dialogs.AddCardsDialog;
+import com.example.smartcards.Models.Cards;
 import com.example.smartcards.R;
+import com.example.smartcards.ViewModels.CardsViewModel;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.List;
 
 public class CardsActivity extends AppCompatActivity implements AddCardsDialog.OnCardInputListener {
@@ -50,8 +53,10 @@ public class CardsActivity extends AppCompatActivity implements AddCardsDialog.O
         recyclerView.setLayoutManager(linearLayoutManager);
 
         mCardsViewModel = ViewModelProviders.of(this).get(CardsViewModel.class);
-        mCardsViewModel.getAllCardsFromFolder(folderId).observe(this, new Observer<List<Cards>>() {
-            @Override
+//        mCardsViewModel.getAllCardsFromFolder(folderId).observe(this, new Observer<List<Cards>>() {
+        // TODO: create request to get card by ID, now it gets all cards from DB
+        mCardsViewModel.getAllCards().observe(this, new Observer<List<Cards>>() {
+        @Override
             public void onChanged(List<Cards> cards) {
                 recyclerView.setAdapter(cardsAdapter);
                 cardsAdapter.setCards(cards);

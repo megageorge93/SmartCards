@@ -20,9 +20,11 @@ public interface CardsDao {
     void deleteCard(Cards...cards);
     @Update
     void updateCard(Cards...cards);
-    @Query("SELECT * FROM cards")
+
+    @Query("SELECT * FROM Cards")
     LiveData<List<Cards>> getAllCards();
-    @Query("SELECT * FROM cards WHERE 'current_folder_id' =:currentCardsFolderId")
+
+    @Query("SELECT * FROM Cards WHERE 'current_folder_id' = :currentCardsFolderId")
     LiveData<List<Cards>> getAllCardsFromFolder(int currentCardsFolderId);
 
 }

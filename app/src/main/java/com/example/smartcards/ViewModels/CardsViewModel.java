@@ -19,13 +19,21 @@ public class CardsViewModel extends AndroidViewModel {
         allCards = cardsRepository.retrieveCardsTask();
     }
 
-    public void insertCard (Cards cards){ cardsRepository.insertCardsTask(cards);}
+    public void insertCard (Cards cards) {
+        cardsRepository.insertCardsTask(cards);
+    }
 
     public void deleteCard(Cards cards){cardsRepository.deleteCardsTask(cards);}
 
     public void updateCard(Cards cards){cardsRepository.updateCardsTask(cards);}
 
-    public LiveData<List<Cards>> getAllCardsFromFolder(int currentCardsFolderId){return cardsRepository.retrieveCardsFromFolder(currentCardsFolderId);}
+    public LiveData<List<Cards>> getAllCards(){
+        return allCards;
+    }
+
+    public LiveData<List<Cards>> getAllCardsFromFolder(int currentCardsFolderId){
+        return cardsRepository.retrieveCardsFromFolder(currentCardsFolderId);
+    }
 
     public void onTakeNewCard(String cardName, String value, int folderId){
         Cards newCard = new Cards(cardName,value,folderId);
