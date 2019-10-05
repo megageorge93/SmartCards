@@ -15,7 +15,7 @@ public class Folders {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "folder_id")
-    private int folderId = 0;
+    private int folderId;
 
     @ColumnInfo(name = "folder_name")
     private String folderName;
