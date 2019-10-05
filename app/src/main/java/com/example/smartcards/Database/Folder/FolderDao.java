@@ -20,7 +20,7 @@ public interface FolderDao {
     @Query("SELECT * FROM folders")
     LiveData<List<Folders>> getAllFolders();
 
-    @Query("SELECT * FROM folders WHERE `current_category_id` = :currentFoldersCategoryId")
+    @Query("SELECT * FROM folders WHERE current_category_id = :currentFoldersCategoryId")
     LiveData<List<Folders>> getAllFoldersFromCategory(int currentFoldersCategoryId);
 
     @Delete

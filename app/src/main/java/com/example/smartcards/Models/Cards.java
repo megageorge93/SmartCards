@@ -13,15 +13,13 @@ import androidx.room.PrimaryKey;
 public class Cards {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "card_id")
-    private int cardId = 0;
+    private int cardId;
     @ColumnInfo(name = "card_name")
     private String cardName;
     @ColumnInfo(name = "card_value")
     private String cardValue;
     @ColumnInfo(name = "current_folder_id")
     private int folderId;
-//    @ColumnInfo(name = "current_category_id")
-//    private int category_id;
     @Ignore
     public Cards() {
     }
@@ -63,14 +61,6 @@ public class Cards {
     public void setFolderId(int folderId) {
         this.folderId = folderId;
     }
-
-//    public int getCategory_id() {
-//        return category_id;
-//    }
-//
-//    public void setCategory_id(int category_id) {
-//        this.category_id = category_id;
-//    }
 
     @Override
     public String toString() {

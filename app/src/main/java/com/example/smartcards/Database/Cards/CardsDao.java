@@ -22,7 +22,7 @@ public interface CardsDao {
     void updateCard(Cards...cards);
     @Query("SELECT * FROM cards")
     LiveData<List<Cards>> getAllCards();
-    @Query("SELECT * FROM cards WHERE 'current_folder_id' =:currentCardsFolderId")
+    @Query("SELECT * FROM cards WHERE current_folder_id =:currentCardsFolderId")
     LiveData<List<Cards>> getAllCardsFromFolder(int currentCardsFolderId);
 
 }

@@ -27,9 +27,6 @@ public class CardsActivity extends AppCompatActivity implements AddCardsDialog.O
     public void sendCardInput(String frontSideInput, String backSideInput) {
         Bundle idFromFolderAdapter = getIntent().getExtras();
         int folderId = idFromFolderAdapter.getInt("folder Id");
-        //int categoryId = idFromFolderAdapter.getInt("Category Id");
-        //folderId & categoryId NOT ok here
-        //Log.d(TAG, "sendCardInput: "+frontSideInput + " " + backSideInput + " folder id " + folderId + " category id " + categoryId);
         Log.d(TAG, "sendCardInput: " +frontSideInput + " " + backSideInput + " folder id " + folderId);
         //folder id ok here
         mCardsViewModel.onTakeNewCard(frontSideInput,backSideInput,folderId);
