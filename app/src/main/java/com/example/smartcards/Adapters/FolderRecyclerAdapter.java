@@ -1,12 +1,19 @@
 package com.example.smartcards.Adapters;
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.smartcards.Adapters.Listeners.OnFolderDeleteListener;
 import com.example.smartcards.Models.Folders;
 import com.example.smartcards.R;
 import com.example.smartcards.UI.CardsActivity;
@@ -23,6 +30,7 @@ public class FolderRecyclerAdapter extends RecyclerView.Adapter<FolderRecyclerAd
 
     private List<Folders> mFolders = new ArrayList<>();
     int currentFolderId;
+    OnFolderDeleteListener onFolderDeleteListener;
 
     @NonNull
     @Override
@@ -79,4 +87,32 @@ public class FolderRecyclerAdapter extends RecyclerView.Adapter<FolderRecyclerAd
         }
     }
 
+    public void setOnFolderDeleteListener(OnFolderDeleteListener onFolderDeleteListener){
+        this.onFolderDeleteListener = onFolderDeleteListener;
+    }
+
+   public ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView,
+                              @NonNull RecyclerView.ViewHolder viewHolder,
+                              @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            Log.d(TAG, "onSwiped: "+ viewHolder.getAdapterPosition() + " " + viewHolder);
+            onFolderDeleteListener.onFolderDelete((FolderViewHolder) viewHolder);
+
+        }
+
+//        @Override
+//        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+//            View itemView = viewHolder.itemView;
+//            Drawable deleteIcon = ContextCompat.getDrawable(itemView.getContext(), R.drawable.ic_delete);
+//            int iconMargin =
+//
+//            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+//        }
+    };
 }

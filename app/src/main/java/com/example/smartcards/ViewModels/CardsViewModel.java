@@ -40,4 +40,5 @@ public class CardsViewModel extends AndroidViewModel {
         Log.d(TAG, "onTakeNewCard: new card "+ newCard);
         insertCard(newCard);
     }
+
 }

@@ -22,6 +22,8 @@ public class CardsActivity extends AppCompatActivity implements AddCardsDialog.O
     CardsViewModel mCardsViewModel;
     CardsRecyclerAdapter cardsAdapter = new CardsRecyclerAdapter();
     AddCardsDialog addCardsDialog = new AddCardsDialog();
+    RecyclerView recyclerView;
+    int lastIndex = cardsAdapter.getItemCount()-1;
 
     @Override
     public void sendCardInput(String frontSideInput, String backSideInput) {
@@ -42,7 +44,7 @@ public class CardsActivity extends AppCompatActivity implements AddCardsDialog.O
         Bundle idFromFolderAdapter = getIntent().getExtras();
         final int folderId = idFromFolderAdapter.getInt("folder Id");
         //folderId ok here
-        final RecyclerView recyclerView = findViewById(R.id.cardsRecyclerView);
+        recyclerView = findViewById(R.id.cardsRecyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -52,6 +54,8 @@ public class CardsActivity extends AppCompatActivity implements AddCardsDialog.O
             public void onChanged(List<Cards> cards) {
                 recyclerView.setAdapter(cardsAdapter);
                 cardsAdapter.setCards(cards);
+//                recyclerView.smoothScrollToPosition(cards.size()-1);
+
             }
         });
 

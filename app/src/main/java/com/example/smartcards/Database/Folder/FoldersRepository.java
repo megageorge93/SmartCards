@@ -26,6 +26,7 @@ public class FoldersRepository {
     private SmartCardDatabase smartCardDatabase;
     private FolderDao folderDao;
     private LiveData<List<Folders>> allFolders;
+//    private List<Folders> allFolders;
 
     public FoldersRepository(Application application) {
         smartCardDatabase = SmartCardDatabase.getInstance(application);
@@ -41,7 +42,7 @@ public class FoldersRepository {
 //        int folderCategoryId = folders.getCategoryId();
     }
     public void deleteFoldersTask(Folders folders){
-        new FoldersRepository.DeleteFoldersTask(folderDao).execute(folders);
+        new DeleteFoldersTask(folderDao).execute(folders);
     }
     public void updateFoldersTask(Folders folders){
         new FoldersRepository.UpdateFoldersTask(folderDao).execute(folders);
@@ -51,11 +52,15 @@ public class FoldersRepository {
         return allFolders;
     }
 
+//    public List<Folders> retrieveFoldersTask(){return allFolders;}
+
     public LiveData<List<Folders>> retrieveFoldersFromCategory(int currentCategoryId){
         return folderDao.getAllFoldersFromCategory(currentCategoryId);
     }
 
-
+//    public List<Folders> retrieveFoldersFromCategory(int currentCategoryId){
+//        return folderDao.getAllFoldersFromCategory(currentCategoryId);
+//    }
 
 
 

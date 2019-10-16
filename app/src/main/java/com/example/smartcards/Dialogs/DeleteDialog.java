@@ -6,20 +6,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.smartcards.Database.Category.CategoryRepository;
-import com.example.smartcards.Models.Categories;
 import com.example.smartcards.R;
 import com.google.android.material.button.MaterialButton;
-
-import java.util.List;
-
 
 public class DeleteDialog extends DialogFragment {
     private static final String TAG = "DeleteDialog";
@@ -63,8 +55,6 @@ public class DeleteDialog extends DialogFragment {
                 boolean deleteIsPressed = true;
                 deleteInputListener.sendDeleteInput(deleteIsPressed, viewHolder);
                 Log.d(TAG, "onClick: clicked "+ deleteIsPressed);
-//                CategoryRepository repository = CategoryRepository.getInstance(getActivity().getApplication());
-//                repository.deleteCategotyById(adapterPosition);
                 dismiss();
             }
         });

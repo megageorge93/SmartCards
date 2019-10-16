@@ -19,9 +19,11 @@ public interface FolderDao {
 
     @Query("SELECT * FROM folders")
     LiveData<List<Folders>> getAllFolders();
+//    List<Folders> getAllFolders();
 
-    @Query("SELECT * FROM folders WHERE current_category_id = :currentFoldersCategoryId")
-    LiveData<List<Folders>> getAllFoldersFromCategory(int currentFoldersCategoryId);
+    @Query("SELECT * FROM folders WHERE current_category_id = :currentCategoryId")
+    LiveData<List<Folders>> getAllFoldersFromCategory(int currentCategoryId);
+//    List<Folders> getAllFoldersFromCategory(int currentCategoryId);
 
     @Delete
     void deleteFolder(Folders... folders);
