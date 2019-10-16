@@ -7,3 +7,6 @@ Assumption: it might be linked to:
 FolderId is null in ViewModel onTake method. 
 OR might be linked with ROOM Database Foreign KEY 
 OR Using getAllFolders instead of getAllFoldersFromCategory
+
+16.10 Catching nullPointer after deleting the Folder
+app crashes at the moment of LiveDate getValue() method
