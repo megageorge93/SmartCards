@@ -39,16 +39,19 @@ public class FoldersActivity extends AppCompatActivity  implements AddDialog.OnI
     }
 
     @Override
-    public void sendDeleteInput(boolean deleteBtnIsPressed, RecyclerView.ViewHolder viewHolder) {
+    public void sendDeleteInput(final boolean deleteBtnIsPressed, final RecyclerView.ViewHolder viewHolder) {
         Bundle idFromCategoryAdapter = getIntent().getExtras();
         int categoryId = idFromCategoryAdapter.getInt("Category Id");
-        if (deleteBtnIsPressed = true){
-
-            //Folders selectedFolder = (Folders) mFoldersViewModel.getAllFoldersFromCategory(categoryId).getValue();
-           // Folders selectedFolder = mFoldersViewModel.getAllFolders().getValue().get(viewHolder.getAdapterPosition());
-            Folders selectedFolder = mFoldersViewModel.getAllFoldersFromCategory(categoryId).getValue().get(viewHolder.getAdapterPosition());
-            mFoldersViewModel.deleteFolder(selectedFolder);
-            Log.d(TAG, "sendDeleteInput: Delete Btn Pressed? " + deleteBtnIsPressed + " adapt position " + viewHolder);
+        if (deleteBtnIsPressed){
+            final int position = viewHolder.getAdapterPosition();
+            mFoldersViewModel.getAllFoldersFromCategory(categoryId).observe(this, new Observer<List<Folders>>() {
+                @Override
+                public void onChanged(List<Folders> folders) {
+                    Folders selectedFolder = folders.get(position);
+                    mFoldersViewModel.deleteFolder(selectedFolder);
+                    Log.d(TAG, "sendDeleteInput: Delete Btn Pressed? " + deleteBtnIsPressed + " adapt position " + viewHolder);
+                }
+            });
         }
     }
 
